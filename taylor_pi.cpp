@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+//Programa que calcula al valor aproximado de pi con el metodo de taylor.
 double calculatePi(int upperBound) {
     double pi = 0.0;
     
