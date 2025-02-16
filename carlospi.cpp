@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <pthread.h>
+#include <cmath>
 
 using namespace std;
 
@@ -64,10 +65,29 @@ int main(int argc, char *argv[]) {
     }
     
     srand(time(0)); // Inicializar semilla aleatoria
+    
+    // Medir tiempo inicial de CPU y wall-clock time
+    clock_t startCPU = clock();
+    time_t startWall = time(nullptr);
+
     double piApprox = calculatePi(N, numThreads);
     
-    cout << "Aproximación de Pi: " << piApprox << endl;
+    // Medir tiempo final de CPU y wall-clock time
+    clock_t endCPU = clock();
+    time_t endWall = time(nullptr);
     
+    // Calcular tiempos
+    double cpuTime = static_cast<double>(endCPU - startCPU) / CLOCKS_PER_SEC;
+    double wallTime = difftime(endWall, startWall);
+
+    // Calcular el error
+    double error = fabs(M_PI - piApprox);
+
+    cout << "Aproximación de Pi: " << piApprox << endl;
+    cout << "Tiempo de CPU: " << cpuTime << " segundos" << endl;
+    cout << "Tiempo real (wall-clock time): " << wallTime << " segundos" << endl;
+    cout << "Error: " << error << endl;
+
     return 0;
 }
 
