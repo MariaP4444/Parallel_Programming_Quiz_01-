@@ -1,6 +1,6 @@
 # Cálculo de π: Métodos Secuenciales y Paralelos  
 
-Este proyecto implementa el cálculo del número π utilizando diferentes métodos y comparando su rendimiento en ejecución secuencial y paralela.  
+Este proyecto implementa el cálculo del número π utilizando diferentes métodos y compara su rendimiento en ejecución secuencial y paralela.  
 
 ## Archivos  
 
@@ -18,18 +18,23 @@ Para compilar los programas, usa `g++` con la opción `-pthread` para la versió
 g++ -o taylorpi taylorpi.cpp -O2
 g++ -o montepi montepi.cpp -O2
 g++ -o carlospi carlospi.cpp -O2 -pthread
+```
 
-## Ejecución  
+### Ejecución  
 
 ```bash
 ./taylorpi <num_iteraciones>
 ./montepi <num_lanzamientos>
 ./carlospi <num_lanzamientos> <num_hilos>
+```
 
-## Ejemplo de ejecución
+#### Ejemplo de ejecución  
+
+```bash
 ./taylorpi 1000000
 ./montepi 1000000
 ./carlospi 1000000 32
+```
 
 ## Análisis de Rendimiento  
 
@@ -39,23 +44,21 @@ Las tablas muestran los tiempos de CPU y errores relativos para diferentes confi
 
 ### Comparación de `carlospi.cpp` con Diferentes Cantidades de Hilos  
 
-| TOSSES   | THREADS = 16 | THREADS = 32 | THREADS = 51 | THREADS = 74 |
-|----------|-------------|-------------|-------------|-------------|
-| **500000** | CPU: 1.34999  | CPU: 1.25337  | CPU: 1.19913  | CPU: 1.2382  |
-|          | REAL: 0       | REAL: 1       | REAL: 0       | REAL: 0       |
-|          | ERROR: 0.005047 | ERROR: 0.00123 | ERROR: 0.00140 | ERROR: 0.004416 |
-| **1000000** | CPU: 2.67988  | CPU: 2.69562  | CPU: 2.7086  | CPU: 2.5714  |
-|          | REAL: 1       | REAL: 0       | REAL: 1       | REAL: 1       |
-|          | ERROR: 0.002915 | ERROR: 0.00133 | ERROR: 0.00137 | ERROR: 0.002652 |
+| Lanzamientos | 16 Hilos | 32 Hilos | 51 Hilos | 74 Hilos |
+|-------------|---------|---------|---------|---------|
+| **500000**  | CPU: 1.34999s  | CPU: 1.25337s  | CPU: 1.19913s  | CPU: 1.2382s  |
+|             | Error: 0.005047 | Error: 0.00123 | Error: 0.00140 | Error: 0.004416 |
+| **1000000** | CPU: 2.67988s  | CPU: 2.69562s  | CPU: 2.7086s  | CPU: 2.5714s  |
+|             | Error: 0.002915 | Error: 0.00133 | Error: 0.00137 | Error: 0.002652 |
 
-### Resultados de `montepi.cpp` (secuencial)  
+### Resultados de `montepi.cpp` (Secuencial)  
 
-| TOSSES   | CPU Time | Real Time | Error |
-|----------|---------|----------|-------|
-| **5000**    | 0.003929  | 0  | 0.0184073 |
-| **10000**   | 0.003986  | 0  | 0.00199265 |
-| **500000**  | 0.158018  | 0  | 0.00163265 |
-| **1000000** | 0.318885  | 0  | 0.000423346 |
+| Lanzamientos | Tiempo CPU | Error |
+|-------------|------------|-------|
+| **5000**    | 0.003929s  | 0.0184073 |
+| **10000**   | 0.003986s  | 0.00199265 |
+| **500000**  | 0.158018s  | 0.00163265 |
+| **1000000** | 0.318885s  | 0.000423346 |
 
 ## Observaciones  
 
