@@ -15,9 +15,9 @@ Este proyecto implementa el cálculo del número π utilizando diferentes métod
 Para compilar los programas, usa `g++` con la opción `-pthread` para la versión paralela:  
 
 ```bash
-g++ -o taylorpi taylorpi.cpp -O2
-g++ -o montepi montepi.cpp -O2
-g++ -o carlospi carlospi.cpp -O2 -pthread
+g++  taylorpi.cpp -o taylorpi
+g++  montepi.cpp -o montepi
+g++ -pthread carlospi.cpp -o carlospi
 ```
 
 ### Ejecución  
