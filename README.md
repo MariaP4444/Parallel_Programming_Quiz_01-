@@ -63,7 +63,7 @@ Las tablas muestran los tiempos de CPU y errores relativos para diferentes confi
 ## Observaciones  
 
 - A medida que aumentan los lanzamientos (`tosses`), la precisión del cálculo mejora en ambos métodos.  
-- La versión paralela (`carlospi.cpp`) reduce el tiempo de CPU significativamente en comparación con la versión secuencial.  
+- La versión paralela (`carlospi.cpp`) reduce el tiempo de CPU en comparación con la versión secuencial.  
 - Hay un punto óptimo en la cantidad de hilos: más hilos no siempre garantizan mayor eficiencia debido a la sobrecarga de sincronización.  
 
 ## Video de Explicación  
